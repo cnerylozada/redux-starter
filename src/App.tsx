@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { store } from "./redux/store";
+import { bugAdded, bugResolved } from "./redux/reducer";
 
 function App() {
-  // store.dispatch({
-  //   type: "bugAdded",
-  //   payload: { description: "My first bug" },
-  // });
-  // console.log(store.getState());
-  useEffect(() => {
-    console.log("xxx");
-  }, []);
+  store.dispatch(bugAdded({ description: "My first bug" }));
+  store.dispatch(bugResolved({ id: 1 }));
+  console.log(store.getState());
+
   return <div className="App"></div>;
 }
 
