@@ -1,8 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { bugsSlice } from "./reducer";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { bugsSlice } from "./bugs.reducer";
+import { projectsSlice } from "./projects.reducer";
 
 export const store = configureStore({
   reducer: {
-    bugs: bugsSlice.reducer,
+    entities: combineReducers({
+      bugs: bugsSlice.reducer,
+      projects: projectsSlice.reducer,
+    }),
   },
 });
