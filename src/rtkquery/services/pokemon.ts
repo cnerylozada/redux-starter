@@ -6,6 +6,13 @@ export const pokemonApi = createApi({
   endpoints: (builder) => ({
     getPokemonByName: builder.query({
       query: (name) => `pokemon/${name}`,
+      transformResponse: (response: { name: string; id: number }) => {
+        console.log(response)
+        return {
+          id: response.id,
+          name: response.name,
+        };
+      },
     }),
   }),
 });
