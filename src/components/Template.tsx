@@ -9,6 +9,9 @@ export const Template = ({ children }: { children: any }) => {
       <div>
         <Link to="/rtk/home">Rtk Home</Link>
       </div>
+      <div>
+        <Link to="/rtk/lazy-pokemons">Rtk Lazy Pokemons</Link>
+      </div>
 
       <div>{children}</div>
     </div>

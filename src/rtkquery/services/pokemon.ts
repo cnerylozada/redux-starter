@@ -1,10 +1,13 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 
 const apiUrl = "https://pokeapi.co/api/v2";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `${apiUrl}/` }),
+  baseQuery: retry(fetchBaseQuery({ baseUrl: `${apiUrl}/` }), {
+    maxRetries: 2,
+  }),
+  keepUnusedDataFor: 10,
   endpoints: (builder) => ({
     getAllPokemons: builder.query<{ pokemons: string[] }, void>({
       query: () => "pokemon",
@@ -25,4 +28,8 @@ export const pokemonApi = createApi({
   }),
 });
 
-export const { useGetAllPokemonsQuery, useGetPokemonByNameQuery } = pokemonApi;
+export const {
+  useGetAllPokemonsQuery,
+  useLazyGetAllPokemonsQuery,
+  useGetPokemonByNameQuery,
+} = pokemonApi;
