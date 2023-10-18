@@ -4,6 +4,7 @@ import { HomePage as RtkHome } from "./pages/rtk/Home";
 import { Root as RtkRoot } from "./pages/rtk/Root";
 import { Root as ReduxRoot } from "./pages/redux/Root";
 import { PostsPage } from "./pages/rtk/Posts";
+import { LazyPokemonsPage } from "./pages/rtk/LazyPokemons";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="home" /> },
       { path: "home", element: <RtkHome /> },
       { path: "posts", element: <PostsPage /> },
+      { path: "lazy-pokemons", element: <LazyPokemonsPage /> },
     ],
   },
 ]);
