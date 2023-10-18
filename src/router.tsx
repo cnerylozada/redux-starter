@@ -5,6 +5,7 @@ import { Root as RtkRoot } from "./pages/rtk/Root";
 import { Root as ReduxRoot } from "./pages/redux/Root";
 import { PostsPage } from "./pages/rtk/Posts";
 import { LazyPokemonsPage } from "./pages/rtk/LazyPokemons";
+import { CounterPage } from "./pages/redux/Counter";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "home",
         element: <ReduxHome />,
+      },
+      {
+        path: "counter",
+        element: <CounterPage />,
       },
     ],
   },
