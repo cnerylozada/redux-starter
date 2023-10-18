@@ -3,6 +3,7 @@ import { HomePage as ReduxHome } from "./pages/redux/Home";
 import { HomePage as RtkHome } from "./pages/rtk/Home";
 import { Root as RtkRoot } from "./pages/rtk/Root";
 import { Root as ReduxRoot } from "./pages/redux/Root";
+import { PostsPage } from "./pages/rtk/Posts";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="home" /> },
       { path: "home", element: <RtkHome /> },
+      { path: "posts", element: <PostsPage /> },
     ],
   },
 ]);

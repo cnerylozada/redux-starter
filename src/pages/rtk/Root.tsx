@@ -1,16 +1,20 @@
 import { Outlet } from "react-router-dom";
 import { store } from "../../rtkquery/store";
 import { Provider } from "react-redux";
+import { HeaderTemplate } from "../../components/HeaderTemplate";
 
 export const Root = () => {
   return (
-    <Provider store={store}>
-      <div>
-        <div>Rtk root</div>
+    <HeaderTemplate>
+      <Provider store={store}>
         <div>
-          <Outlet />
+          <div>Rtk root</div>
+          <hr />
+          <div>
+            <Outlet />
+          </div>
         </div>
-      </div>
-    </Provider>
+      </Provider>
+    </HeaderTemplate>
   );
 };

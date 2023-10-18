@@ -1,0 +1,10 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" },
+    { "id": 2, "title": "react", "author": "cristh" },
+    { "id": 3, "title": "solid", "author": "tatiana" },
+    { "id": 4, "title": "nestjs", "author": "lucciano" }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" }
+}
