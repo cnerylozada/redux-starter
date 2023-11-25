@@ -12,7 +12,6 @@ export const pokemonApi = createApi({
     getAllPokemons: builder.query<{ pokemons: string[] }, void>({
       query: () => "pokemon",
       transformResponse: (response: { results: { name: string }[] }) => {
-        console.log(response);
         return { pokemons: response.results.map((_) => _.name) };
       },
     }),

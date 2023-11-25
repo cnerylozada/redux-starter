@@ -2,7 +2,7 @@ import { useLazyGetAllPokemonsQuery } from "../../rtkquery/services/pokemon";
 
 export const LazyPokemonsPage = () => {
   const [trigger, { data, isLoading, isUninitialized }] =
-    useLazyGetAllPokemonsQuery({});
+    useLazyGetAllPokemonsQuery();
   return (
     <div>
       <div>LazyPokemonsPage</div>

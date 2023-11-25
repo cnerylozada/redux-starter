@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { useGetAllPostsQuery } from "../../rtkquery/services/posts";
 
 export const PostsPage = () => {
-  const { data, isLoading } = useGetAllPostsQuery("");
+  const { data, isLoading } = useGetAllPostsQuery(undefined);
   return (
     <div>
       <div>PostsPage</div>
@@ -10,7 +11,12 @@ export const PostsPage = () => {
         <div>
           {data.map((_) => (
             <div key={_.id}>
-              id: {_.id} title: {_.title}
+              <div>
+                id: {_.id} title: {_.title}
+              </div>
+              <div>
+                <Link to={`./${_.id}`}>Go to detail</Link>
+              </div>
             </div>
           ))}
         </div>

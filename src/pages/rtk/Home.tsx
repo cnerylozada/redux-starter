@@ -2,7 +2,6 @@ import { useGetAllPokemonsQuery } from "../../rtkquery/services/pokemon";
 
 export const HomePage = () => {
   const { data, isLoading, isFetching, isError } = useGetAllPokemonsQuery();
-  // const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
 
   return (
     <div>
