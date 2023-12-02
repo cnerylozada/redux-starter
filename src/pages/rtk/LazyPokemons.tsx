@@ -8,6 +8,7 @@ export const LazyPokemonsPage = () => {
       <div>LazyPokemonsPage</div>
       {isUninitialized && (
         <button
+          className="bg-yellow-200 border rounded-sm p-1 hover:bg-yellow-400"
           onClick={() => {
             trigger();
           }}

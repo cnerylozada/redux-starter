@@ -1,8 +1,12 @@
-import { useParams } from "react-router-dom";
 import { useGetAllPostsQuery } from "../../rtkquery/services/posts";
 
-export const PostDetailFromResult = () => {
-  const { postId } = useParams();
+export const PostDetailFromResult = ({
+  postId,
+  onClose,
+}: {
+  postId: number;
+  onClose: () => void;
+}) => {
   const { post } = useGetAllPostsQuery(undefined, {
     selectFromResult: (_) => {
       return {
@@ -12,8 +16,11 @@ export const PostDetailFromResult = () => {
   });
 
   return (
-    <div>
-      <div>PostDetailFromResult</div>
+    <div className="p-4 border rounded-md bg-blue-50">
+      <div>
+        <button onClick={onClose}>X</button>
+      </div>
+      <div className="font-bold">PostDetailFromResult</div>
       <div>{JSON.stringify(post)}</div>
     </div>
   );

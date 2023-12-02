@@ -4,7 +4,7 @@
     { "id": 2, "title": "react", "author": "cristh" },
     { "id": 3, "title": "solid", "author": "tatiana" },
     { "id": 4, "title": "nestjs", "author": "lucciano" },
-    { "id": 5, "title": "psicologias", "author": "fabiola" }
+    { "id": 5, "title": "psicologia", "author": "fabiola arone" }
   ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }

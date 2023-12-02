@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="home" />,
+        element: <Navigate to="/home" />,
       },
       {
         path: "home",
@@ -30,14 +30,13 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/rtk",
+    path: "rtk",
     element: <RtkRoot />,
     children: [
-      { index: true, element: <Navigate to="home" /> },
+      { index: true, element: <Navigate to="/rtk/home" /> },
       { path: "home", element: <RtkHome /> },
       { path: "posts", element: <PostsPage /> },
       { path: "posts/:postId", element: <PostDetail /> },
-      { path: "posts/from-result/:postId", element: <PostDetailFromResult /> },
       { path: "skip", element: <Skip /> },
       { path: "lazy-pokemons", element: <LazyPokemonsPage /> },
     ],
