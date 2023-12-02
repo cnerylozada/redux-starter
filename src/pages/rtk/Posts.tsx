@@ -9,6 +9,7 @@ export const PostsPage = () => {
     isOpen: false,
     postId: 0,
   });
+
   return (
     <div className="relative">
       {modal.isOpen && (
@@ -22,6 +23,11 @@ export const PostsPage = () => {
         </div>
       )}
       <div>PostsPage</div>
+      <div className="mb-2">
+        <button className="p-1 border rounded-sm bg-blue-50">
+          <Link to={"./create"}>Create new post</Link>
+        </button>
+      </div>
       {isLoading && <div>Loading ...</div>}
       {data && (
         <div>
